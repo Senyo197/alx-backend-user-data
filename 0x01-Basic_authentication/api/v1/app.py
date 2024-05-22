@@ -9,11 +9,10 @@ from flask_cors import CORS
 from api.v1.auth.auth import Auth
 from api.v1.auth.basic_auth import BasicAuth
 
-
 # Initialize Flask app and register blueprints
 app = Flask(__name__)
-app.register_blueprint(app_views)
 
+app.register_blueprint(app_views)
 
 # Enable CORS for all routes under /api/v1/*
 CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
@@ -21,8 +20,12 @@ CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 # Determine the type of authentication to use
 auth_type = getenv('AUTH_TYPE', 'auth')
-auth = Auth() if auth_type == 'auth' else BasicAuth()
-if auth_type == 'basic_auth' else None
+if auth_type == 'auth':
+    auth = Auth()
+
+
+if auth_type == 'basic_auth':
+    auth = BasicAuth()
 
 
 @app.errorhandler(404)
