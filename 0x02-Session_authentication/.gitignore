@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and logs
+*.log
+logs/
+*.cache/
+
+# Environment variables
+.env
+
+# Static files
+/static/
+
+# Media files
+/media/
+
+# Database
+*.sqlite3
+*.db
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+
+# Dependency directories
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Compiled Python files
+*.pyc
+
+# Local settings
+local_settings.py
+
+# Ignore migrations except for initial migrations
+**/migrations/**
+!**/migrations/__init__.py
